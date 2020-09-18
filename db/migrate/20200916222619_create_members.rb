@@ -4,7 +4,7 @@ class CreateMembers < ActiveRecord::Migration[6.0]
       t.string :name
       t.string :surname
       t.string :email
-      t.dateTime :birthday
+      t.datetime :birthday
       t.integer :games_played
       t.integer :rank
 

@@ -1,0 +1,17 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Match</h1>
+<% if @players != nil %>
+    <%= form_tag("/match/rank", method: :post) do %>
+        <p>Player One
+        <%= select_tag(:player_one, options_from_collection_for_select(@players, :id, :name)) %></p>
+        <p>Player Two
+        <%= select_tag(:player_two, options_from_collection_for_select(@players, :id, :name)) %></p>
+        <p>Winner
+        <%= select_tag(:winner, options_from_collection_for_select(@players, :id, :name)) %></p>
+        
+        <%= submit_tag "Rank Match" %>
+    <% end %>
+<% else %>
+    <h3>You need at least 2 members to start a match</h3>
+<% end %>
